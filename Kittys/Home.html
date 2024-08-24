@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="main.css">
+        <center><h1>Cat Girl Cleaning & Photography</h1></center>
+        <nav>
+            <ul>
+                <li><a href=Home.html>Home</a></li>
+                <li><a href=About.html>About</a></li>
+                <li><a href=Services.html>Services</a></li>
+                <li><a href=Contact.html>Contact</a></li>
+                <li style="Float:right"><a href=Calendar.html>Calendar</a></li>
+            </ul>
+        </nav>
+    </head>
+    <body>
+        <!-- Popup container -->
+        <div id="popup" class="popup-container">
+            <div class="popup-content">
+                <span class="close-btn" onclick="closePopup()">&times;</span>
+                <h2>Get 10% Off Your First Service!</h2>
+                <p>Enter your name to claim your discount code:</p>
+                <input type="text" class="name-input" id="userName" placeholder="Enter your name" required>
+                <button class="submit-btn" onclick="generateCode()">Get Code</button>
+                <p class="discount-code" id="discountCode"></p>
+            </div>
+        </div>
+
+        <script>
+            // Function to show the popup
+            function showPopup() {
+                document.getElementById('popup').style.display = 'flex';
+            }
+
+            // Function to close the popup
+            function closePopup() {
+                document.getElementById('popup').style.display = 'none';
+            }
+
+            // Show popup when page loads
+            window.onload = function() {
+                showPopup();
+            };
+
+            // Function to generate a random discount code
+            function generateCode() {
+                const name = document.getElementById('userName').value;
+                if (name) {
+                    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+                    let code = 'SAVE10-';
+                    for (let i = 0; i < 8; i++) {
+                        code += characters.charAt(Math.floor(Math.random() * characters.length));
+                    }
+                    document.getElementById('discountCode').innerText = `Your discount code: ${code}`;
+                } else {
+                    alert("Please enter your name.");
+                }
+            }
+        </script>
+    </body>
+</html>
