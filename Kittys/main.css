@@ -1,4 +1,4 @@
-ul {
+  ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -114,4 +114,98 @@ ul {
       font-size: 18px;
       color: #333;
       font-weight: bold;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  .calendar-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .save-button-container {
+    text-align: center;
+    margin: 20px auto;
+  }
+
+  .view-options {
+    display: flex;
+    gap: 10px;
+  }
+
+  button {
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .button:active {
+    background-color: #0056b3;
+  }
+
+  .calendar {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: repeat(7, 1ft);
+    gap: 1px;
+  }
+
+  .calendar-day {
+    display: flex;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+  }
+
+  .calendar-day-header {
+    font-weight: bold;
+    background-color: #f0f0f0;
+  }
+
+  .editable {
+    background-color: #ffffcc;
+    cursor: text;
   }
